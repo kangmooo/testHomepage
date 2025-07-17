@@ -1,5 +1,5 @@
 # 1단계: 빌드
-FROM eclipse-temurin:21-jdk AS build
+FROM eclipse-temurin:17-jdk AS build
 
 RUN apt-get update && apt-get install -y curl unzip
 WORKDIR /app
@@ -11,7 +11,7 @@ RUN chmod +x ./gradlew
 RUN ./gradlew bootJar --no-daemon
 
 # 2단계: 실행
-FROM eclipse-temurin:21-jre
+FROM eclipse-temurin:17-jre
 WORKDIR /app
 
 # 정확한 JAR 이름 지정
