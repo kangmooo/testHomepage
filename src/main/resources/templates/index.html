@@ -1,107 +1,112 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>My Homepage</title>
+    <title>케어링 - 프리미엄 방문요양·가족요양</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        html {
-            scroll-behavior: smooth;
-        }
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-        }
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(0,0,0,0.8);
-            color: white;
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            padding: 15px 0;
-            z-index: 999;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        header {
-            background-image: url('https://source.unsplash.com/1600x600/?technology,code');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 150px 20px;
-            margin-top: 60px; /* offset for fixed nav */
-        }
-        section {
-            padding: 80px 20px;
-            text-align: center;
-        }
-        .about img {
-            width: 200px;
-            border-radius: 50%;
-        }
-        .portfolio {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-        .portfolio img {
-            width: 300px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 8px;
-        }
-        footer {
-            background: #f1f1f1;
-            padding: 30px;
+        html { scroll-behavior: smooth; }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; background: #f8f9fa; }
+        header { background: #1c4d86; color: white; position: sticky; top: 0; z-index: 100;}
+        nav { display: flex; justify-content: space-between; align-items: center; padding: 15px 40px;}
+        nav ul { list-style: none; display: flex; margin: 0; padding: 0;}
+        nav ul li { margin: 0 18px; }
+        nav ul li a { color: white; text-decoration: none; font-weight: bold; }
+        section { padding: 70px 14% 60px 14%; }
+        .intro { background: #e3edfa; text-align: center; }
+        .features { display: flex; gap: 24px; flex-wrap: wrap; }
+        .feature-box { background: white; border-radius: 20px; box-shadow: 0 2px 22px #cdd5e6a8; padding: 36px 28px; flex: 1 1 240px; min-width: 240px;}
+        .cta { background: #1c4d86; color: white; text-align: center; border-radius: 18px; padding: 40px 10px; margin-bottom: 50px;}
+        .btn-main { background: #22497c; color: white; padding: 14px 32px; font-size: 17px; border: none; border-radius: 30px; cursor: pointer; margin-top: 20px; }
+        footer { background: #10315b; color: #fff; padding: 18px 14% 22px 14%; text-align: center;}
+        @media (max-width: 900px) {
+            nav { flex-direction: column; padding: 14px 12px;}
+            section { padding: 50px 6%;}
+            .features { flex-direction: column;}
         }
     </style>
 </head>
 <body>
-
-<nav>
-    <a href="#about">About</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-</nav>
-
+<!-- Header Navigation -->
 <header>
-    <h1>Hello, I'm a Developer</h1>
-    <p>Building with Kotlin & Spring Boot</p>
+    <nav>
+        <div style="font-size:1.6em; font-weight:bold;">케어링</div>
+        <ul>
+            <li><a href="#about">회사소개</a></li>
+            <li><a href="#services">서비스안내</a></li>
+            <li><a href="#strengths">특장점</a></li>
+            <li><a href="#stories">후기 및 이야기</a></li>
+            <li><a href="#contact">상담신청</a></li>
+        </ul>
+    </nav>
 </header>
 
-<section id="about" class="about">
-    <h2>About Me</h2>
-    <img src="https://source.unsplash.com/200x200/?person,developer" alt="About Me Image">
-    <p>I love building fast, modern, and scalable backend services.</p>
+<!-- Main Intro Section -->
+<section class="intro" id="about">
+    <h1>프리미엄 방문요양·가족요양</h1>
+    <p style="font-size:1.2em;">소중한 가족처럼, 어르신의 최고의 삶을 위한 동행</p>
+    <p>3년 연속 한국소비자만족지수 1위, 신뢰받는 요양전문 브랜드</p>
+    <button class="btn-main" onclick="window.location='#contact'">무료 상담 신청</button>
 </section>
 
-<section id="portfolio" class="portfolio">
-    <h2>Portfolio</h2>
-    <video autoplay muted loop playsinline>
-        <source src="https://videos.pexels.com/video-files/3217802/3217802-hd_1920_1080_30fps.mp4" type="video/mp4"/>
-        브라우저가 비디오 태그를 지원하지 않습니다.
-    </video>
-    <video autoplay muted loop playsinline>
-        <source src="https://videos.pexels.com/video-files/9699685/9699685-hd_1920_1080_24fps.mp4" type="video/mp4"/>
-        브라우저가 비디오 태그를 지원하지 않습니다.
-    </video>
-    <video autoplay muted loop playsinline>
-        <source src="https://videos.pexels.com/video-files/26561930/11959914_2560_1440_24fps.mp4" type="video/mp4"/>
-        브라우저가 비디오 태그를 지원하지 않습니다.
-    </video>
+<!-- Services Section -->
+<section id="services">
+    <h2>주요 서비스 안내</h2>
+    <div class="features">
+        <div class="feature-box">
+            <h3>방문요양</h3>
+            <p>전문 요양보호사가 직접 방문하여, 어르신의 일상생활 및 건강을 세심하게 돌봐드립니다.</p>
+        </div>
+        <div class="feature-box">
+            <h3>가족요양</h3>
+            <p>가족이 직접 요양을 제공하면서 월급 형태의 수당도 받을 수 있는 맞춤형 가족요양 서비스입니다.</p>
+        </div>
+        <div class="feature-box">
+            <h3>주간보호센터</h3>
+            <p>어르신들이 집처럼 편안하다고 말씀하시는, 믿을 수 있는 주간 케어 서비스 센터 운영.</p>
+        </div>
+        <div class="feature-box">
+            <h3>복지용구</h3>
+            <p>안전한 생활을 위한 각종 복지용구 및 보조기구 할인 제공.</p>
+        </div>
+    </div>
 </section>
 
-<footer id="contact">
-    <h2>Contact</h2>
-    <p>Email: your@email.com</p>
+<!-- Strengths Section -->
+<section id="strengths">
+    <h2>케어링의 특장점</h2>
+    <ul>
+        <li><b>3년 연속 소비자만족지수 1위</b> - 검증된 신뢰와 서비스 품질</li>
+        <li><b>전문가 무료상담</b> - 분야별 전문가가 복잡한 장기요양 등급부터 맞춤형 방법까지 무료로 안내</li>
+        <li><b>가족같이 진심을 다하는 돌봄</b> - 어르신, 가족 모두가 만족하는 실질적 지원</li>
+        <li><b>신속한 등급/이용 가이드북 제공</b> - 방문요양, 가족요양, 주간보호센터별 필수 가이드라인 제공</li>
+        <li><b>다양한 센터 운영</b> - 전국 케어링 센터 운영, 각 센터장의 진심이 깃든 서비스</li>
+    </ul>
+</section>
+
+<!-- Stories / Testimonial Section -->
+<section id="stories">
+    <h2>케어링 사람들 이야기</h2>
+    <div style="background:#f1f7fd; padding:28px; border-radius:14px;">
+        <p><b>센터장 박현선 인터뷰:</b> "어르신들이 빠르게 적응할 수 있도록 가족같은 분위기를 만들어요."</p>
+        <p><b>센터장 최은지 인터뷰:</b> "진심과 사랑이 담긴 돌봄, 어르신의 미소가 제 보람이에요."</p>
+        <p>다양한 케어링 스토리와 성공사례가 고객의 신뢰를 더합니다.</p>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+    <h2>전문가 무료 상담 신청</h2>
+    <div class="cta">
+        <p style="font-size:1.3em;">어떤 궁금증도 케어링 전문가에게 물어보세요!</p>
+        <p>상담전화 <b>1522-6585</b> (평일 09:00~18:00)</p>
+        <button class="btn-main" onclick="window.location='tel:15226585'">전화상담 바로걸기</button>
+    </div>
+</section>
+
+<footer>
+    &copy; 2025 케어링 | 프리미엄 방문요양·가족요양 서비스<br>
+    한국소비자만족지수 3년 연속 1위 | 문의전화: 1522-6585
 </footer>
-
 </body>
 </html>
